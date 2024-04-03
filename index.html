@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrious"></script>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: "Outfit", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            
+        }
+
+        .box1 {
+            background-image: url(bg-illustration.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+        .box2 {
+            background-image: url(bg-illustration.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+        
+    </style>
+</head>
+
+<body class="bg-[#111729] ">
+    <div class="box1 h-screen w-screen flex flex-col items-center justify-center gap-[4rem] ">
+        <img src="logo-qr-generator.svg" alt="logo" class="h-[50px] ">
+        <div
+            class="flex w-[40%] border-2 border-[#3662E3] rounded-2xl px-1 p-[0.3rem] sm:flex-row flex-col items-center sm:justify-between gap-4 bg-slate-950">
+            <input type="url" placeholder="Enter an url" id="urlinput"
+                class="w-[50%]  outline-none focus:border-[1px] focus:shadow focus:shadow-[#3662E3] focus:border-opacity-95 focus:border-[#3662E3] p-1 h-[2.7rem] ml-[0.1rem] text-[#F2F5F9] px-4 bg-transparent rounded-lg placeholder:text-[#364153] placeholder:text-[1rem] placeholder:font-semibold">
+            <button class="text-[#F2F5F9] h-[3rem] px-6 bg-[#3662E3] text-[1rem] text-center font-normal rounded-xl"
+               id="submitbtn">QR code </button>
+        </div>
+    </div>
+    <div class="hidden" id="qrbox">
+        <div class="box2 h-screen w-screen flex flex-col items-center justify-center gap-[4rem] relative ">
+            <nav class="absolute top-0 left-0 mt-[3rem] ml-[5rem]">
+                <img src="logo-qr-generator.svg" alt="">
+            </nav >
+                
+            <div class="bg-[#4e80ee33] rounded-full h-[300px] w-[300px] flex items-center justify-center overflow-visible" id="qrbackground">
+                <div class="p-6 bg-white rounded-3xl">
+                    <canvas id="qrcode" ></canvas>
+                </div>
+                
+            </div>
+            <div class="flex gap-9 sm:flex-row flex-col">
+                <a class="no-underline" id="qrlink">
+                    <button class="text-[#F2F5F9] h-[3rem] px-10 bg-[#3662E3] text-[1rem] text-center font-normal rounded-xl flex gap-4 items-center justify-center py-7" id="download" name="download"><p>Download</p>  <i class="fa-solid fa-download"></i></button>
+                </a>
+                <button class="text-[#F2F5F9] h-[3rem] px-10 bg-[#3662E3] text-[1rem] text-center font-normal rounded-xl flex gap-4 items-center justify-center py-7" id="share" name="share"><p>Share</p>  <i class="fa-solid fa-repeat"></i> </button>
+            </div>
+        </div>
+    </div>
+    
+
+
+   
+    <script src="script.js"></script>
+</body>
+
+</html>
