@@ -1,7 +1,7 @@
 let text = document.querySelector("#urlinput");
 
 let btn = document.querySelector("#submitbtn");
-btn.addEventListener("click", generateQR);
+btn.addEventListener("click",()=> text.value!=='' && generateQR());
 
 function generateQR() {
 
